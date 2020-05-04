@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" xml:lang="en">
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>GX-WHAT IS GXT</title>
+    <!--BootStrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/8bc07d145d.js"></script>
+
+    <!--java Script Video Player-->
+    <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.6.6/video-js.css" />
+    <!-- Streamroot source handler plugin -->
+    <!--Style-->
+
+
+
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+
+        /* Optional: show position indicator in red */
+        ::-webkit-scrollbar-thumb {
+            background: #FFf;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding-top: 0px !important;
+            padding: 60px !important;
+            margin: auto !important;
+        }
+
+        .imagewarpper {
+            display: flex;
+        }
+
+        .headerwrapper {
+            display: flex;
+            padding-top: -25px;
+
+            padding-bottom: 20px;
+            padding-top: 25px;
+        }
+
+        .heading1 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+        }
+
+        .apigxt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .video-js {
+            width: 100%;
+            height: 100%;
+            object-fit: initial;
+            width: calc(90px + 100%);
+            margin-left: -60px;
+        }
+
+
+        .vidcards {
+            display: flex;
+            width: calc(100% + 130px);
+            justify-content: space-around;
+            margin-left: -60px;
+            padding-left: 60px;
+            padding-top: 20px;
+        }
+
+        .videoimagecard {
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .lessonthumb {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            overflow: auto;
+        }
+
+        .card {
+            margin-bottom: 10px !important;
+        }
+
+        /* IGNORE EVERYTHING BELOW */
+
+
+        .scrollcont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin-top: -88px;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+
+
+        .chevron {
+            position: absolute;
+            width: 28px;
+            height: 8px;
+            opacity: 0;
+            transform: scale3d(0.5, 0.5, 0.5);
+            animation: move 3s ease-out infinite;
+        }
+
+        .chevron:first-child {
+            animation: move 3s ease-out 1s infinite;
+        }
+
+        .chevron:nth-child(2) {
+            animation: move 3s ease-out 2s infinite;
+        }
+
+        .chevron:before,
+        .chevron:after {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 51%;
+            background: #186AB4;
+        }
+
+        .chevron:before {
+            left: 0;
+            transform: skew(0deg, 30deg);
+        }
+
+        .chevron:after {
+            right: 0;
+            width: 50%;
+            transform: skew(0deg, -30deg);
+        }
+
+        @keyframes move {
+            25% {
+                opacity: 1;
+
+            }
+
+            33% {
+                opacity: 1;
+                transform: translateY(30px);
+            }
+
+            67% {
+                opacity: 1;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+            }
+        }
+
+        @keyframes pulse {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 650px) {
+
+            .videojsmob {
+                width: calc(100px + 100%) !important;
+                margin-left: -50px !important;
+            }
+
+            .desktopmodal {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 2000px) {
+            .mobilemodal {
+                display: none !important;
+            }
+        }
+    </style>
+    <!--End Style-->
+
+</head>
+
+<body>
+    <!--Main Modal-->
+    <div class="container-fluid h-100  desktopmodal"
+        style="padding-left: 50px; padding-right: 50px; transform: scale(1.05); margin-left: 35px; ">
+        <div class="row" style="height: 100%; ">
+            <div class="col-md-9 "
+                style="background: linear-gradient(140deg,  #186AB4 40%, #000000); border-radius: 15px; display: flex; flex-direction: column;">
+                <div class="headerwrapper">
+                    <div class="imagewarpper">
+                        <img class="mediasliderimage" src="https://placehold.it/100x100" alt="Image"
+                            style="max-width:100%; border-radius: 50%;" />
+                    </div>
+                    <div class="heading1">
+                        <h3 style="color: white; font-size: -webkit-xxx-large;">WHAT IS GXT</h3>
+                        <h6 style="color: white; opacity: 0.7;">LESSON 1</h6>
+                    </div>
+                    <div class="apigxt">
+                        <h4 style="color: white; font-size: -webkit-xxx-large;">32.1 GXT</h4>
+                        <h6 style="color: white; opacity: 0.7;">EXPECTED PAYOUT</h6>
+                    </div>
+                </div>
+                <div class="row" style="flex-grow: 1; height: 0; ">
+                    <div class="col-lg-9 h-100">
+                        <video id="vid1" controls class="video-js vjs-default-skin vjs-big-play-centered h-100"
+                            preload="auto " style="border-radius: 10px; object-fit: initial; ">
+                            <source id="videoSrc1"
+                                src="https://dev.globalxchange.com/wp-content/uploads/2020/02/Time-Lapse-Video-of-Tall-Buildings.mp4"
+                                type="video/mp4 " type="application/x-mpegURL" />
+                        </video>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row" style="margin-top: auto;">
+                    <div class="col-md-9">
+                        <div class="vidcards" style="display: flex; ">
+                            <a href="#">
+                                <img class="videoimagecard" src="https://placehold.it/200x150" alt="Image"
+                                    style="max-width:100%;" />
+                                <div id="1" class="overlaycard" style="opacity: 0;">
+                                    <div class="textslider" style="color: transparent;">Earn Upto 10GXT</div>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <img class="videoimagecard" src="https://placehold.it/200x150" alt="Image"
+                                    style="max-width:100%;" />
+                                <div id="2" class="overlaycard" style="opacity: 1;">
+                                    <div class="textslider" style="color: transparent;">Earn Upto 10GXT</div>
+                                </div>
+                            </a><a href="#">
+                                <img class="videoimagecard" src="https://placehold.it/200x150" alt="Image"
+                                    style="max-width:100%;" />
+                                <div id="3" class="overlaycard" style="opacity: 1;">
+                                    <div class="textslider" style="color: transparent;">Earn Upto 10GXT</div>
+                                </div>
+                            </a><a href="#">
+                                <img class="videoimagecard" src="https://placehold.it/200x150" alt="Image"
+                                    style="max-width:100%;" />
+                                <div id="4" class="overlaycard" style="opacity: 1;">
+                                    <div class="textslider" style="color: transparent;">Earn Upto 10GXT</div>
+                                </div>
+                            </a><a href="#">
+                                <img class="videoimagecard" src="https://placehold.it/200x150" alt="Image"
+                                    style="max-width:100%;" />
+                                <div id="5" class="overlaycard" style="opacity: 1;">
+                                    <div class="textslider" style="color: transparent;">Earn Upto 10GXT</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" style="height: 100%; border-radius: 15px;">
+                <div class="lessonthumb ">
+                    <div class="cards_item">
+                        <div class="card">
+                            <div class="card_image" style="width: 100%;">
+                                <img src="https://picsum.photos/250/150/?image=11" style="width: 100%;" />
+                            </div>
+                            <div style="display: flex; flex-grow: 1;">
+                                <div class="card_content" style="padding: 10px">
+                                    <button type="button" class="btn btn-outline-info"><i class="fa fa-arrow-right"></i>
+                                        Lesson 2</button>
+                                </div>
+                                <div class="card_content1" style="flex: auto; padding:10px;">
+                                    <h4 style="margin: auto !important; float: right !important; color:#186AB4;">UPTO 30
+                                        GXT</h4>
+                                </div>
+
+                            </div>
+                            <div class="card_content2" style="flex: auto; padding:10px;">
+                                <h4
+                                    style=" margin: auto !important; display: flex; flex-grow: 1; justify-content: center; color:#186AB4;">
+                                    What is Nitrous?</h4>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card_image" style="width: 100%;">
+                                <img src="https://picsum.photos/250/150/?image=11" style="width: 100%;" />
+                            </div>
+                            <div style="display: flex; flex-grow: 1;">
+                                <div class="card_content" style="padding: 10px">
+                                    <button type="button" class="btn btn-outline-info"><i class="fa fa-arrow-right"></i>
+                                        Lesson 3</button>
+                                </div>
+                                <div class="card_content1" style="flex: auto; padding:10px;">
+                                    <h4 style="margin: auto !important; float: right !important; color:#186AB4;">UPTO 30
+                                        GXT</h4>
+                                </div>
+
+                            </div>
+                            <div class="card_content2" style="flex: auto; padding:10px;">
+                                <h4
+                                    style=" margin: auto !important; display: flex; flex-grow: 1; justify-content: center; color:#186AB4;">
+                                    What is Vault?</h4>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card_image" style="width: 100%;">
+                                <img src="https://picsum.photos/250/150/?image=11" style="width: 100%;" />
+                            </div>
+                            <div style="display: flex; flex-grow: 1;">
+                                <div class="card_content" style="padding: 10px">
+                                    <button type="button" class="btn btn-outline-info"><i class="fa fa-arrow-right"></i>
+                                        Lesson 4</button>
+                                </div>
+                                <div class="card_content1" style="flex: auto; padding:10px;">
+                                    <h4 style="margin: auto !important; float: right !important; color:#186AB4;">UPTO 30
+                                        GXT</h4>
+                                </div>
+
+                            </div>
+                            <div class="card_content2" style="flex: auto; padding:10px;">
+                                <h4
+                                    style=" margin: auto !important; display: flex; flex-grow: 1; justify-content: center; color:#186AB4;">
+                                    What is Pulse?</h4>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card_image" style="width: 100%;">
+                                <img src="https://picsum.photos/250/150/?image=11" style="width: 100%;" />
+                            </div>
+                            <div style="display: flex; flex-grow: 1;">
+                                <div class="card_content" style="padding: 10px">
+                                    <button type="button" class="btn btn-outline-info"><i class="fa fa-arrow-right"></i>
+                                        Lesson 5</button>
+                                </div>
+                                <div class="card_content1" style="flex: auto; padding:10px;">
+                                    <h4 style="margin: auto !important; float: right !important; color:#186AB4;">UPTO 30
+                                        GXT</h4>
+                                </div>
+
+                            </div>
+                            <div class="card_content2" style="flex: auto; padding:10px;">
+                                <h4
+                                    style=" margin: auto !important; display: flex; flex-grow: 1; justify-content: center; color:#186AB4;">
+                                    What is Nitrous?</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container scrollcont">
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Main Modal-->
+
+
+    <!--Mobile Modal -->
+    <section class="mobilemodal">
+        <div class="container-fluid">
+            <div class=" h-100">
+                <div class="d-flex text-center" style="flex-direction: column; padding:15px">
+                    <div class=" justify-content-center" style="text-align-last: center; ">
+                        <h3> What Is GXT</h3>
+                    </div>
+
+                    <div class=" justify-content-center" style="text-align-last: center;">
+                        <h3> Lesson 1</h3>
+                    </div>
+                </div>
+                <div class=" justify-content-center">
+                    <div>
+                        <video id="vid1" controls
+                            class="video-js vjs-default-skin vjs-big-play-centered h-100 videojsmob" preload="auto "
+                            style="border-radius: 10px; object-fit: initial; ">
+                            <source id="videoSrc1"
+                                src="https://dev.globalxchange.com/wp-content/uploads/2020/02/Time-Lapse-Video-of-Tall-Buildings.mp4"
+                                type="video/mp4 " type="application/x-mpegURL" />
+                        </video>
+                    </div>
+                </div>
+                <div class="d-flex" style="flex-direction: column; padding:20px;">
+                    <div class=" justify-content-center" style="text-align-last: center;">
+                        <h5> Expected Payout</h5>
+                    </div>
+                    <div class=" justify-content-center" style="text-align-last: center;">
+                        <h3>30 GXT</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--End Mobile Modal-->
+
+
+
+
+
+
+
+</body>
+<!--Modal Share End-->
+<!--<script>-->
+<script>
+    // function relocate_gx() {
+    //     window.location.href = "https://dev.globalxchange.com/gx";
+    // }
+    // $(function() {
+    // $("#exampleModal").modal();
+    // });
+</script>
+
+<script>
+    function save_stuff() {
+        //Saving stuff
+    }
+</script>
+
+
+<script src="Script.js"></script>
+
+
+
+
+</html>
