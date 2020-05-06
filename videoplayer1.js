@@ -20,3 +20,18 @@ function LoadCryptoData() {
 LoadCryptoData()
 
 
+axios({
+    method: 'POST',
+    url: 'https://comms.globalxchange.com/coin/promo/farm/payout/claim',
+    data: {
+        email: email,
+        campaign_id: campaign_id,
+        video_no: 'videoNumber',
+        video_title: 'coin',
+        payout_amount_given:'payout'
+    }
+  }).then(function() {
+    console.log("done");
+  });
+
+

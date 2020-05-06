@@ -235,7 +235,8 @@
                         <h6 style="color: white; opacity: 0.7;">LESSON 1</h6>
                     </div>
                     <div class="apigxt">
-                        <h4 style="color: white; font-size: -webkit-xxx-large;"><span id="payout">Payout</span><span style="margin-left: 10px;" id="coin">Coin</span></h4>
+                        <h4 style="color: white; font-size: -webkit-xxx-large;"><span id="payout">Payout</span><span
+                                style="margin-left: 10px;" id="coin">Coin</span></h4>
                         <h6 style="color: white; opacity: 0.7;">EXPECTED PAYOUT</h6>
                     </div>
                 </div>
@@ -431,13 +432,43 @@
 
 
 
+    <div class="modal fade " id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: white">
+                <div class="modal-header border-bottom-0">
 
+                    <h4 class="modal-title" id="myModalLabel" style="color: #186AB4">Enter Your Email</h4>
 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #186AB4">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
 
-</body>
-<!--Modal Share End-->
-<!--<script>-->
-<script>
+                </div>
+                <p style="margin-left: 15px; color: #186AB4">So We Can Credit Your Coins When You Are Done</p>
+
+                <div class="modal-body" style="padding: 0rem;">
+                    <form role="form" action='#' method="post">
+                        <input id='emailInput' type="text" class="form-control" placeholder="Email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn " id="signin" style="color: #186AB4">Starting Earning</button>
+
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="btn-group-toggle" style="margin-left: 20px;"
+    data-toggle="buttons" data-dismiss="modal" id='closemodal'>
+    <label class="btn btn-secondary active">
+        <input type="checkbox" checked> Close
+    </label>
+</div>
+
+    <!--Modal Share End-->
+    <!--<script>-->
+    <script>
 
     // function relocate_gx() {
     //     window.location.href = "https://dev.globalxchange.com/gx";
@@ -445,19 +476,26 @@
     // $(function() {
     // $("#exampleModal").modal();
     // });
-</script>
+    </script>
 
-<script>
-    function save_stuff() {
-        //Saving stuff
-    }
-</script>
+    <script>
+        function save_stuff() {
+            //Saving stuff
+        }
+        $ (window).ready (function () {
+	setTimeout (function () {
+		$ ('#myModal1').modal ("show")
+	}, 100)
+})
 
 
-<script type="text/javascript" src="Script.js"></script>
-<script type="text/javascript" src="videoplayer1.js"></script>
+    </script>
 
 
+    <script type="text/javascript" src="Script.js"></script>
+    <script type="text/javascript" src="videoplayer1.js"></script>
 
+
+</body>
 
 </html>
