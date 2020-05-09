@@ -52,7 +52,7 @@ window.onload = function () {
           if (number + 1 !== 4) {
             $(window).ready(function () {
               setTimeout(function () {
-                $('#myModal1').modal('show');
+                $('#ButtonModalCenter').modal('show');
               }, 100);
             });
             document
@@ -88,28 +88,24 @@ window.onload = function () {
     console.log(requestObj);
   };
 
-  //Post And Get Methods//
-  // Get Method It IS Working
+  
+      
+  
 
-  // Error is gone
-  // Data Is Not Loading Bro 
+  LoadCryptoData();
+  
   function LoadCryptoData() {
     console.log('LOAd cryptoo data');
-    // let video_index = videoSrcs.indexOf(
-    //   'https://dev.globalxchange.com/wp-content/uploads/2020/02/Time-Lapse-Video-of-Tall-Buildings.mp4'
-    // );
-
-    // video_index++;
-    document.getElementById('closemodal').onclick = function () {
-      console.log('LoadCryptoData');
-      let url = '';
-      if (videoNumber === 1) {
-        url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_no=1';
-      } else if (videoNumber === 2) {
-        url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_no=2';
-      }
+    
+    let url = '';
+    if (videoNumber === 1) {
+      url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_no=1';
+    } else if (videoNumber === 2) {
+      url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_no=2';
+    }
     axios({
-      url,
+      url
+        ,
       method: 'get',
     })
       .then((result) => {
@@ -124,16 +120,12 @@ window.onload = function () {
       .catch((error) => {
         console.log('Error Loading Cryoto Data');
       });
-    };
-      
   }
 
   LoadCryptoData();
 
-  // Post
 
-  // Why do have two onclick handler ?
-  // I Have Kept For Testing We Can Remove That
+  // Post
 
   // document.getElementById('closemodal').onclick = function () {
   //   console.log('postgxclaim');
