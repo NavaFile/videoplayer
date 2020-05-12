@@ -92,37 +92,37 @@ window.onload = function () {
       
   
 
-//   LoadCryptoData();
+  LoadCryptoData();
   
-//   function LoadCryptoData() {
-//     console.log('LOAd cryptoo data');
+  function LoadCryptoData() {
+    console.log('LOAd cryptoo data');
     
-//     let url = '';
-//     if (videoNumber === 1) {
-//       url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_no=1';
-//     } else if (videoNumber === 2) {
-//       url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_n2llllo=2';
-//     }
-//     axios({
-//       url
-//         ,
-//       method: 'get',
-//     })
-//       .then((result) => {
-//         console.log(result.data);
+    let url = '';
+    if (videoNumber === 1) {
+      url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_no=1';
+    } else if (videoNumber === 2) {
+      url = 'https://comms.globalxchange.com/coin/promo/farm/payout/quote/get?campaign_id=gxcom_gxt&video_n2llllo=2';
+    }
+    axios({
+      url
+        ,
+      method: 'get',
+    })
+      .then((result) => {
+        console.log(result.data);
 
-//         console.log('The Crypto Data is :', result.data.status);
-//         document.getElementById(
-//           'payout'
-//         ).innerHTML = result.data.payout.toFixed(2);
-//         document.getElementById('coin').innerHTML = result.data.coin;
-//       })
-//       .catch((error) => {
-//         console.log('Error Loading Cryoto Data');
-//       });
-//   }
+        console.log('The Crypto Data is :', result.data.status);
+        document.getElementById(
+          'payout'
+        ).innerHTML = result.data.payout.toFixed(2);
+        document.getElementById('coin').innerHTML = result.data.coin;
+      })
+      .catch((error) => {
+        console.log('Error Loading Cryoto Data');
+      });
+  }
 
-//   LoadCryptoData();
+  LoadCryptoData();
 
 
 //   // Post
